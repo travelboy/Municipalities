@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="78af03ca13634ad684b46c375cbb8b74" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="municipalitiesModel.FBInfo" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="municipalitiesModel.FBNew" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="municipalitiesModel.Municipality" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="municipalitiesModel.TwitterInfo" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="municipalitiesModel.TwitterNew" Width="1.5" PointX="2.75" PointY="4.75" />
+        <EntityTypeShape EntityType="municipalitiesModel.User" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="municipalitiesModel.YTInfo" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="municipalitiesModel.YTNew" Width="1.5" PointX="6.75" PointY="3.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

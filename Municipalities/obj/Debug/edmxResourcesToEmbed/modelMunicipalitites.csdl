@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="municipalitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="municipalitiesEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="FBInfoes" EntityType="municipalitiesModel.FBInfo" />
+    <EntitySet Name="FBNews" EntityType="municipalitiesModel.FBNew" />
+    <EntitySet Name="Municipalities" EntityType="municipalitiesModel.Municipality" />
+    <EntitySet Name="TwitterInfoes" EntityType="municipalitiesModel.TwitterInfo" />
+    <EntitySet Name="TwitterNews" EntityType="municipalitiesModel.TwitterNew" />
+    <EntitySet Name="Users" EntityType="municipalitiesModel.User" />
+    <EntitySet Name="YTInfoes" EntityType="municipalitiesModel.YTInfo" />
+    <EntitySet Name="YTNews" EntityType="municipalitiesModel.YTNew" />
+  </EntityContainer>
+  <EntityType Name="FBInfo">
+    <Key>
+      <PropertyRef Name="FBInfoId" />
+    </Key>
+    <Property Name="FBInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MunId" Type="Int32" />
+    <Property Name="FBdescription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="FBgeneralInfo" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="FBstreet" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="FBphoto" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="FBwebsite" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FBNew">
+    <Key>
+      <PropertyRef Name="FBNewsId" />
+    </Key>
+    <Property Name="FBNewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MunId" Type="Int32" />
+    <Property Name="FBname" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="FBmessage" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="FBpicture" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="FBcreated" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="FBlink" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="FBmonth" Type="Int32" />
+    <Property Name="FByear" Type="Int32" />
+    <Property Name="FBday" Type="Int32" />
+  </EntityType>
+  <EntityType Name="Municipality">
+    <Key>
+      <PropertyRef Name="MunId" />
+    </Key>
+    <Property Name="MunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FBId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TwitterID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="YTId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="NumFBAct" Type="Int32" />
+    <Property Name="NumTwitterAct" Type="Int32" />
+    <Property Name="NumYTAct" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TwitterInfo">
+    <Key>
+      <PropertyRef Name="TInfoId" />
+    </Key>
+    <Property Name="TInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MunId" Type="Int32" />
+    <Property Name="Tdescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TFollowers" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="TFollowing" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TProfileCreated" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TNumTweers" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="TProfilePic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="TwitterNew">
+    <Key>
+      <PropertyRef Name="TNewsId" />
+    </Key>
+    <Property Name="TNewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MunId" Type="Int32" />
+    <Property Name="TText" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="TCreated" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="TLink" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="TMedia" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+    <Property Name="TMonth" Type="Int32" />
+    <Property Name="TYear" Type="Int32" />
+    <Property Name="TDay" Type="Int32" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Addtional" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="YTInfo">
+    <Key>
+      <PropertyRef Name="YTInfoId" />
+    </Key>
+    <Property Name="YTInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MunId" Type="Int32" />
+    <Property Name="viewsTotal" Type="Int32" />
+    <Property Name="subscrCount" Type="Int32" />
+  </EntityType>
+  <EntityType Name="YTNew">
+    <Key>
+      <PropertyRef Name="YTNewsId" />
+    </Key>
+    <Property Name="YTNewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MunId" Type="Int32" />
+    <Property Name="YTTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YTVideo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+    <Property Name="YTDay" Type="Int32" />
+    <Property Name="YTMonth" Type="Int32" />
+    <Property Name="YTYear" Type="Int32" />
+  </EntityType>
+</Schema>

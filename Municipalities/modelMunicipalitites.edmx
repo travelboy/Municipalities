@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="municipalitiesModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="FBInfo">
+          <Key>
+            <PropertyRef Name="FBInfoId" />
+          </Key>
+          <Property Name="FBInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MunId" Type="int" />
+          <Property Name="FBdescription" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FBgeneralInfo" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FBstreet" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FBphoto" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FBwebsite" Type="nvarchar" MaxLength="4000" />
+        </EntityType>
+        <EntityType Name="FBNews">
+          <Key>
+            <PropertyRef Name="FBNewsId" />
+          </Key>
+          <Property Name="FBNewsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MunId" Type="int" />
+          <Property Name="FBname" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FBmessage" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FBpicture" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FBcreated" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FBlink" Type="nvarchar" MaxLength="4000" />
+          <Property Name="FBmonth" Type="int" />
+          <Property Name="FByear" Type="int" />
+          <Property Name="FBday" Type="int" />
+        </EntityType>
+        <EntityType Name="Municipalities">
+          <Key>
+            <PropertyRef Name="MunId" />
+          </Key>
+          <Property Name="MunId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="FBId" Type="nvarchar" MaxLength="50" />
+          <Property Name="TwitterID" Type="nvarchar" MaxLength="50" />
+          <Property Name="YTId" Type="nvarchar" MaxLength="50" />
+          <Property Name="NumFBAct" Type="int" />
+          <Property Name="NumTwitterAct" Type="int" />
+          <Property Name="NumYTAct" Type="int" />
+        </EntityType>
+        <EntityType Name="TwitterInfo">
+          <Key>
+            <PropertyRef Name="TInfoId" />
+          </Key>
+          <Property Name="TInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MunId" Type="int" />
+          <Property Name="Tdescription" Type="nvarchar" MaxLength="500" />
+          <Property Name="TFollowers" Type="nvarchar" MaxLength="500" />
+          <Property Name="TFollowing" Type="nvarchar" MaxLength="100" />
+          <Property Name="TProfileCreated" Type="nvarchar" MaxLength="100" />
+          <Property Name="TNumTweers" Type="nvarchar" MaxLength="100" />
+          <Property Name="TProfilePic" Type="nvarchar" MaxLength="100" />
+        </EntityType>
+        <EntityType Name="TwitterNews">
+          <Key>
+            <PropertyRef Name="TNewsId" />
+          </Key>
+          <Property Name="TNewsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MunId" Type="int" />
+          <Property Name="TText" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TCreated" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TLink" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TMedia" Type="nvarchar" MaxLength="4000" />
+          <Property Name="TMonth" Type="int" />
+          <Property Name="TYear" Type="int" />
+          <Property Name="TDay" Type="int" />
+        </EntityType>
+        <EntityType Name="Users">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Name" Type="nvarchar" MaxLength="50" />
+          <Property Name="Username" Type="nvarchar" MaxLength="20" />
+          <Property Name="Password" Type="nvarchar" MaxLength="20" />
+          <Property Name="Addtional" Type="nvarchar" MaxLength="150" />
+        </EntityType>
+        <EntityType Name="YTInfo">
+          <Key>
+            <PropertyRef Name="YTInfoId" />
+          </Key>
+          <Property Name="YTInfoId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MunId" Type="int" />
+          <Property Name="viewsTotal" Type="int" />
+          <Property Name="subscrCount" Type="int" />
+        </EntityType>
+        <EntityType Name="YTNews">
+          <Key>
+            <PropertyRef Name="YTNewsId" />
+          </Key>
+          <Property Name="YTNewsId" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MunId" Type="int" />
+          <Property Name="YTTitle" Type="nvarchar" MaxLength="500" />
+          <Property Name="YTVideo" Type="nvarchar" MaxLength="500" />
+          <Property Name="YTDay" Type="int" />
+          <Property Name="YTMonth" Type="int" />
+          <Property Name="YTYear" Type="int" />
+        </EntityType>
+        <EntityContainer Name="municipalitiesModelStoreContainer">
+          <EntitySet Name="FBInfo" EntityType="Self.FBInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FBNews" EntityType="Self.FBNews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Municipalities" EntityType="Self.Municipalities" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TwitterInfo" EntityType="Self.TwitterInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TwitterNews" EntityType="Self.TwitterNews" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YTInfo" EntityType="Self.YTInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="YTNews" EntityType="Self.YTNews" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="municipalitiesModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="municipalitiesEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="FBInfoes" EntityType="municipalitiesModel.FBInfo" />
+          <EntitySet Name="FBNews" EntityType="municipalitiesModel.FBNew" />
+          <EntitySet Name="Municipalities" EntityType="municipalitiesModel.Municipality" />
+          <EntitySet Name="TwitterInfoes" EntityType="municipalitiesModel.TwitterInfo" />
+          <EntitySet Name="TwitterNews" EntityType="municipalitiesModel.TwitterNew" />
+          <EntitySet Name="Users" EntityType="municipalitiesModel.User" />
+          <EntitySet Name="YTInfoes" EntityType="municipalitiesModel.YTInfo" />
+          <EntitySet Name="YTNews" EntityType="municipalitiesModel.YTNew" />
+        </EntityContainer>
+        <EntityType Name="FBInfo">
+          <Key>
+            <PropertyRef Name="FBInfoId" />
+          </Key>
+          <Property Name="FBInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MunId" Type="Int32" />
+          <Property Name="FBdescription" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FBgeneralInfo" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FBstreet" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FBphoto" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FBwebsite" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="FBNew">
+          <Key>
+            <PropertyRef Name="FBNewsId" />
+          </Key>
+          <Property Name="FBNewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MunId" Type="Int32" />
+          <Property Name="FBname" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FBmessage" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FBpicture" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FBcreated" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FBlink" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="FBmonth" Type="Int32" />
+          <Property Name="FByear" Type="Int32" />
+          <Property Name="FBday" Type="Int32" />
+        </EntityType>
+        <EntityType Name="Municipality">
+          <Key>
+            <PropertyRef Name="MunId" />
+          </Key>
+          <Property Name="MunId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FBId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="TwitterID" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="YTId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="NumFBAct" Type="Int32" />
+          <Property Name="NumTwitterAct" Type="Int32" />
+          <Property Name="NumYTAct" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TwitterInfo">
+          <Key>
+            <PropertyRef Name="TInfoId" />
+          </Key>
+          <Property Name="TInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MunId" Type="Int32" />
+          <Property Name="Tdescription" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TFollowers" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="TFollowing" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TProfileCreated" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TNumTweers" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="TProfilePic" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="TwitterNew">
+          <Key>
+            <PropertyRef Name="TNewsId" />
+          </Key>
+          <Property Name="TNewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MunId" Type="Int32" />
+          <Property Name="TText" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TCreated" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TLink" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TMedia" Type="String" MaxLength="4000" FixedLength="false" Unicode="true" />
+          <Property Name="TMonth" Type="Int32" />
+          <Property Name="TYear" Type="Int32" />
+          <Property Name="TDay" Type="Int32" />
+        </EntityType>
+        <EntityType Name="User">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Name" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Username" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Password" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Addtional" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="YTInfo">
+          <Key>
+            <PropertyRef Name="YTInfoId" />
+          </Key>
+          <Property Name="YTInfoId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MunId" Type="Int32" />
+          <Property Name="viewsTotal" Type="Int32" />
+          <Property Name="subscrCount" Type="Int32" />
+        </EntityType>
+        <EntityType Name="YTNew">
+          <Key>
+            <PropertyRef Name="YTNewsId" />
+          </Key>
+          <Property Name="YTNewsId" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="MunId" Type="Int32" />
+          <Property Name="YTTitle" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YTVideo" Type="String" MaxLength="500" FixedLength="false" Unicode="true" />
+          <Property Name="YTDay" Type="Int32" />
+          <Property Name="YTMonth" Type="Int32" />
+          <Property Name="YTYear" Type="Int32" />
+        </EntityType>
+        </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="municipalitiesModelStoreContainer" CdmEntityContainer="municipalitiesEntities">
+          <EntitySetMapping Name="FBInfoes">
+            <EntityTypeMapping TypeName="municipalitiesModel.FBInfo">
+              <MappingFragment StoreEntitySet="FBInfo">
+                <ScalarProperty Name="FBwebsite" ColumnName="FBwebsite" />
+                <ScalarProperty Name="FBphoto" ColumnName="FBphoto" />
+                <ScalarProperty Name="FBstreet" ColumnName="FBstreet" />
+                <ScalarProperty Name="FBgeneralInfo" ColumnName="FBgeneralInfo" />
+                <ScalarProperty Name="FBdescription" ColumnName="FBdescription" />
+                <ScalarProperty Name="MunId" ColumnName="MunId" />
+                <ScalarProperty Name="FBInfoId" ColumnName="FBInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FBNews">
+            <EntityTypeMapping TypeName="municipalitiesModel.FBNew">
+              <MappingFragment StoreEntitySet="FBNews">
+                <ScalarProperty Name="FBday" ColumnName="FBday" />
+                <ScalarProperty Name="FByear" ColumnName="FByear" />
+                <ScalarProperty Name="FBmonth" ColumnName="FBmonth" />
+                <ScalarProperty Name="FBlink" ColumnName="FBlink" />
+                <ScalarProperty Name="FBcreated" ColumnName="FBcreated" />
+                <ScalarProperty Name="FBpicture" ColumnName="FBpicture" />
+                <ScalarProperty Name="FBmessage" ColumnName="FBmessage" />
+                <ScalarProperty Name="FBname" ColumnName="FBname" />
+                <ScalarProperty Name="MunId" ColumnName="MunId" />
+                <ScalarProperty Name="FBNewsId" ColumnName="FBNewsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Municipalities">
+            <EntityTypeMapping TypeName="municipalitiesModel.Municipality">
+              <MappingFragment StoreEntitySet="Municipalities">
+                <ScalarProperty Name="NumYTAct" ColumnName="NumYTAct" />
+                <ScalarProperty Name="NumTwitterAct" ColumnName="NumTwitterAct" />
+                <ScalarProperty Name="NumFBAct" ColumnName="NumFBAct" />
+                <ScalarProperty Name="YTId" ColumnName="YTId" />
+                <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+                <ScalarProperty Name="FBId" ColumnName="FBId" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="MunId" ColumnName="MunId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TwitterInfoes">
+            <EntityTypeMapping TypeName="municipalitiesModel.TwitterInfo">
+              <MappingFragment StoreEntitySet="TwitterInfo">
+                <ScalarProperty Name="TProfilePic" ColumnName="TProfilePic" />
+                <ScalarProperty Name="TNumTweers" ColumnName="TNumTweers" />
+                <ScalarProperty Name="TProfileCreated" ColumnName="TProfileCreated" />
+                <ScalarProperty Name="TFollowing" ColumnName="TFollowing" />
+                <ScalarProperty Name="TFollowers" ColumnName="TFollowers" />
+                <ScalarProperty Name="Tdescription" ColumnName="Tdescription" />
+                <ScalarProperty Name="MunId" ColumnName="MunId" />
+                <ScalarProperty Name="TInfoId" ColumnName="TInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TwitterNews">
+            <EntityTypeMapping TypeName="municipalitiesModel.TwitterNew">
+              <MappingFragment StoreEntitySet="TwitterNews">
+                <ScalarProperty Name="TDay" ColumnName="TDay" />
+                <ScalarProperty Name="TYear" ColumnName="TYear" />
+                <ScalarProperty Name="TMonth" ColumnName="TMonth" />
+                <ScalarProperty Name="TMedia" ColumnName="TMedia" />
+                <ScalarProperty Name="TLink" ColumnName="TLink" />
+                <ScalarProperty Name="TCreated" ColumnName="TCreated" />
+                <ScalarProperty Name="TText" ColumnName="TText" />
+                <ScalarProperty Name="MunId" ColumnName="MunId" />
+                <ScalarProperty Name="TNewsId" ColumnName="TNewsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Users">
+            <EntityTypeMapping TypeName="municipalitiesModel.User">
+              <MappingFragment StoreEntitySet="Users">
+                <ScalarProperty Name="Addtional" ColumnName="Addtional" />
+                <ScalarProperty Name="Password" ColumnName="Password" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YTInfoes">
+            <EntityTypeMapping TypeName="municipalitiesModel.YTInfo">
+              <MappingFragment StoreEntitySet="YTInfo">
+                <ScalarProperty Name="subscrCount" ColumnName="subscrCount" />
+                <ScalarProperty Name="viewsTotal" ColumnName="viewsTotal" />
+                <ScalarProperty Name="MunId" ColumnName="MunId" />
+                <ScalarProperty Name="YTInfoId" ColumnName="YTInfoId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="YTNews">
+            <EntityTypeMapping TypeName="municipalitiesModel.YTNew">
+              <MappingFragment StoreEntitySet="YTNews">
+                <ScalarProperty Name="YTYear" ColumnName="YTYear" />
+                <ScalarProperty Name="YTMonth" ColumnName="YTMonth" />
+                <ScalarProperty Name="YTDay" ColumnName="YTDay" />
+                <ScalarProperty Name="YTVideo" ColumnName="YTVideo" />
+                <ScalarProperty Name="YTTitle" ColumnName="YTTitle" />
+                <ScalarProperty Name="MunId" ColumnName="MunId" />
+                <ScalarProperty Name="YTNewsId" ColumnName="YTNewsId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

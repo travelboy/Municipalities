@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="municipalitiesModelStoreContainer" CdmEntityContainer="municipalitiesEntities">
+    <EntitySetMapping Name="FBInfoes">
+      <EntityTypeMapping TypeName="municipalitiesModel.FBInfo">
+        <MappingFragment StoreEntitySet="FBInfo">
+          <ScalarProperty Name="FBwebsite" ColumnName="FBwebsite" />
+          <ScalarProperty Name="FBphoto" ColumnName="FBphoto" />
+          <ScalarProperty Name="FBstreet" ColumnName="FBstreet" />
+          <ScalarProperty Name="FBgeneralInfo" ColumnName="FBgeneralInfo" />
+          <ScalarProperty Name="FBdescription" ColumnName="FBdescription" />
+          <ScalarProperty Name="MunId" ColumnName="MunId" />
+          <ScalarProperty Name="FBInfoId" ColumnName="FBInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FBNews">
+      <EntityTypeMapping TypeName="municipalitiesModel.FBNew">
+        <MappingFragment StoreEntitySet="FBNews">
+          <ScalarProperty Name="FBday" ColumnName="FBday" />
+          <ScalarProperty Name="FByear" ColumnName="FByear" />
+          <ScalarProperty Name="FBmonth" ColumnName="FBmonth" />
+          <ScalarProperty Name="FBlink" ColumnName="FBlink" />
+          <ScalarProperty Name="FBcreated" ColumnName="FBcreated" />
+          <ScalarProperty Name="FBpicture" ColumnName="FBpicture" />
+          <ScalarProperty Name="FBmessage" ColumnName="FBmessage" />
+          <ScalarProperty Name="FBname" ColumnName="FBname" />
+          <ScalarProperty Name="MunId" ColumnName="MunId" />
+          <ScalarProperty Name="FBNewsId" ColumnName="FBNewsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Municipalities">
+      <EntityTypeMapping TypeName="municipalitiesModel.Municipality">
+        <MappingFragment StoreEntitySet="Municipalities">
+          <ScalarProperty Name="NumYTAct" ColumnName="NumYTAct" />
+          <ScalarProperty Name="NumTwitterAct" ColumnName="NumTwitterAct" />
+          <ScalarProperty Name="NumFBAct" ColumnName="NumFBAct" />
+          <ScalarProperty Name="YTId" ColumnName="YTId" />
+          <ScalarProperty Name="TwitterID" ColumnName="TwitterID" />
+          <ScalarProperty Name="FBId" ColumnName="FBId" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="MunId" ColumnName="MunId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TwitterInfoes">
+      <EntityTypeMapping TypeName="municipalitiesModel.TwitterInfo">
+        <MappingFragment StoreEntitySet="TwitterInfo">
+          <ScalarProperty Name="TProfilePic" ColumnName="TProfilePic" />
+          <ScalarProperty Name="TNumTweers" ColumnName="TNumTweers" />
+          <ScalarProperty Name="TProfileCreated" ColumnName="TProfileCreated" />
+          <ScalarProperty Name="TFollowing" ColumnName="TFollowing" />
+          <ScalarProperty Name="TFollowers" ColumnName="TFollowers" />
+          <ScalarProperty Name="Tdescription" ColumnName="Tdescription" />
+          <ScalarProperty Name="MunId" ColumnName="MunId" />
+          <ScalarProperty Name="TInfoId" ColumnName="TInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TwitterNews">
+      <EntityTypeMapping TypeName="municipalitiesModel.TwitterNew">
+        <MappingFragment StoreEntitySet="TwitterNews">
+          <ScalarProperty Name="TDay" ColumnName="TDay" />
+          <ScalarProperty Name="TYear" ColumnName="TYear" />
+          <ScalarProperty Name="TMonth" ColumnName="TMonth" />
+          <ScalarProperty Name="TMedia" ColumnName="TMedia" />
+          <ScalarProperty Name="TLink" ColumnName="TLink" />
+          <ScalarProperty Name="TCreated" ColumnName="TCreated" />
+          <ScalarProperty Name="TText" ColumnName="TText" />
+          <ScalarProperty Name="MunId" ColumnName="MunId" />
+          <ScalarProperty Name="TNewsId" ColumnName="TNewsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="municipalitiesModel.User">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="Addtional" ColumnName="Addtional" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YTInfoes">
+      <EntityTypeMapping TypeName="municipalitiesModel.YTInfo">
+        <MappingFragment StoreEntitySet="YTInfo">
+          <ScalarProperty Name="subscrCount" ColumnName="subscrCount" />
+          <ScalarProperty Name="viewsTotal" ColumnName="viewsTotal" />
+          <ScalarProperty Name="MunId" ColumnName="MunId" />
+          <ScalarProperty Name="YTInfoId" ColumnName="YTInfoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="YTNews">
+      <EntityTypeMapping TypeName="municipalitiesModel.YTNew">
+        <MappingFragment StoreEntitySet="YTNews">
+          <ScalarProperty Name="YTYear" ColumnName="YTYear" />
+          <ScalarProperty Name="YTMonth" ColumnName="YTMonth" />
+          <ScalarProperty Name="YTDay" ColumnName="YTDay" />
+          <ScalarProperty Name="YTVideo" ColumnName="YTVideo" />
+          <ScalarProperty Name="YTTitle" ColumnName="YTTitle" />
+          <ScalarProperty Name="MunId" ColumnName="MunId" />
+          <ScalarProperty Name="YTNewsId" ColumnName="YTNewsId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

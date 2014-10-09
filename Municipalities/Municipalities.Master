@@ -1,0 +1,156 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Municipalities.master.cs" Inherits="Municipalities.Municipalities" %>
+<%@ Import Namespace="System.IO" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+        <title>MunicipalitiesMacedonia</title>
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+    	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+		<link rel="stylesheet" type="text/css" href="css/component.css" />
+		<script src="js/modernizr.custom.js"></script>
+  
+
+
+    
+       <asp:ContentPlaceHolder ID="head" runat="server">
+           </asp:ContentPlaceHolder>
+
+        <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery.min.js"></script>
+<!---- start-smoth-scrolling---->
+<script type="text/javascript">
+    jQuery(document).ready(function ($) {
+        $(".scroll").click(function (event) {
+            event.preventDefault();
+            $('html,body').animate({ scrollTop: $(this.hash).offset().top }, 1200);
+        });
+    });
+	</script>
+<!---- start-smoth-scrolling---->
+<!-- Custom Theme files -->
+<link href="css/style.css" rel='stylesheet' type='text/css' />
+<!-- Custom Theme files -->
+
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!--webfont-->
+<link href='http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Lato:100,200,300,400,600,700,900' rel='stylesheet' type='text/css'>
+<!----start-top-nav-script---->
+		<script>
+		    $(function () {
+		        var pull = $('#pull');
+		        menu = $('nav ul');
+		        menuHeight = menu.height();
+		        $(pull).on('click', function (e) {
+		            e.preventDefault();
+		            menu.slideToggle();
+		        });
+		        $(window).resize(function () {
+		            var w = $(window).width();
+		            if (w > 320 && menu.is(':hidden')) {
+		                menu.removeAttr('style');
+		            }
+		        });
+		    });
+		</script>
+		<!----//End-top-nav-script---->
+
+    
+</head>
+         
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1"
+    EnablePageMethods="true"
+    EnablePartialRendering="true" runat="server" />
+    <div>
+  
+        <!----start-header---->
+		<div class="header">
+			<div class="container">
+				<div class="logo">
+				  <a href="default.aspx"><h2 style="font-style: oblique;
+color: #637f83;">Социјалните медиуми кај македонските општини</h2></a>
+				</div>
+		  		<div class="menu">
+					<a class="toggleMenu" href="#"><img src="images/nav_icon.png" alt="" /> </a>
+					<ul class="nav" id="nav">
+					  
+					  <li><a href="default.aspx">Почетна</a></li>
+					  <li><a href="analysis.aspx">Анализа</a></li>
+					  <li><a href="map.aspx">Мапа</a></li>
+					  <li><a href="activities.aspx">Активности</a></li>
+					 
+					  <li><a href="AdminAgain.aspx">Админ</a></li>								
+					  <div class="clear"></div>
+					</ul>
+					<script type="text/javascript" src="js/responsive-nav.js"></script>
+				</div>							
+	  			<div class="clearfix"> </div>
+			    <!----//End-top-nav---->
+			 </div>
+		</div>
+         <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+		<!----//End-header---->
+            <div class="footer" style="padding-top: 500px">
+			<div class="footer_top" style="height: 70px">
+				<%--<div class="container">--%>
+					<div class="footer_head">
+						
+						<p>Дипломска работа. Тема : Анализа на социјалните активности на општините во Република Македонија.</p>
+                     
+                       
+		   			</div>
+					
+			   <%--</div>--%>
+		     </div>
+	
+		    
+		       
+			   		   
+			   		
+		    	<div class="copy" style="height: 100px; background: beige;">
+		    	       <div id="Div1" style="float: left;
+padding-left: 177px;
+padding-top: 20px;">
+		    	     <ul class="social_left">
+			   			  <li class="facebook"><a href="https://www.linkedin.com/pub/bojan-simoski/59/68/885"><i class="linked"> </i></a></li>
+			   			  <li class="fb_text"><h4><a href="https://www.linkedin.com/pub/bojan-simoski/59/68/885">Контактирајте ме на  LinkedIn</a></h4>
+			   			  	<p style="padding-right: 150px;">LinkedIn профил</p>
+			   			  </li>
+			   			 
+			   			</ul>
+                    </div>
+                    
+                    
+              
+		        
+                   
+
+                    <div id="fb" style="float:right; padding-right: 170px; padding-top: 20px;">
+                      <ul class="social_left">
+                           
+			   			  <li class="facebook"><a href="https://www.facebook.com/bojan.simoski.3"><i class="fb"> </i></a></li>
+			   			  <li class="fb_text"><h4><a href="https://www.facebook.com/bojan.simoski.3">Контактирајте ме на Facebook</a></h4>
+			   			  	<p>Facebook профил</p>
+			   			  </li>
+			   			 
+			   			</ul>
+                        </div>
+		       </div>
+                
+                		
+			   		  
+			   		</div>
+		    
+		</div>
+        
+    
+    </form>
+</body>
+</html>
